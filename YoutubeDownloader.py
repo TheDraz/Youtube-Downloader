@@ -9,8 +9,6 @@ window.title("Youtube Downloader")
 window.geometry("720x360")
 window.resizable(False, False)
 
-#COLOR = "#635e5e"
-#fenster["background"] = COLOR
 SavePath = ""
 OPTIONS = ["","Video", "Audio", "Playlist"]
 
