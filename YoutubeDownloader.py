@@ -22,12 +22,12 @@ def setSavePath():
     savepath = filedialog.askdirectory(parent=window,initialdir=desktop,title='Please set a path')
     global SavePath
     SavePath = savepath
-    SpeicherOrt_Text.config(text = "Path: " + SavePath)            
+    Savepath_Text.config(text = "Path: " + SavePath)            
 
 def Download():
     SelectionValue = variable.get()
     TypeValue = variable2.get()
-    EntryValue = Eingabefeld.get()
+    EntryValue = InputField.get()
     if SavePath:
         if SelectionValue == OPTIONS[1]: # Download Video fiie
             DownloadVideo(EntryValue)
@@ -69,18 +69,18 @@ def DownloadPlaylist(EntryValue):
         messagebox.showerror("No URL found", "Please type in a valid URL")
 
 Textfeld = ttk.Label(window, text="Put URL in") 
-Eingabefeld = ttk.Entry(window)
+InputField = ttk.Entry(window)
 SelectionMenu = ttk.OptionMenu(window, variable, *OPTIONS)
 Download_Button = ttk.Button(window, text = "Download", command = Download)
-SpeicherOrt_Text = ttk.Label(window, text = "Path:")
-SpeicherOrt_Text["anchor"] = W
-SpeicherOrt_Button = ttk.Button(window, text = "Set output Path", command = setSavePath)
+Savepath_Text = ttk.Label(window, text = "Path:")
+Savepath_Text["anchor"] = W
+Savepath_Button = ttk.Button(window, text = "Set output Path", command = setSavePath)
 
 Textfeld.place(height = 20, width = 120, x = 175, y = 110)
-Eingabefeld.place(height = 40, width = 200, x = 300, y = 100)
+InputField.place(height = 40, width = 200, x = 300, y = 100)
 SelectionMenu.place(height = 40, width = 100, x = 530, y = 100)
 Download_Button.place(height = 40, width = 100, x = 300, y = 180)
-SpeicherOrt_Text.place(height = 20, width = 200, x = 260, y = 240)
-SpeicherOrt_Button.place(height = 40, width = 150, x = 290, y = 280)
+Savepath_Text.place(height = 20, width = 200, x = 260, y = 240)
+Savepath_Button.place(height = 40, width = 150, x = 290, y = 280)
 
 window.mainloop()
